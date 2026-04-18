@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
     <meta name="theme-color" content="#fff9ef" />
-    <title>GCSE Writing Techniques Trainer</title>
+    <title>GCSE English Language Trainer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,146 +21,227 @@
       <header class="hero">
         <div class="hero-copy">
           <p class="eyebrow">GCSE English Language</p>
-          <h1>Writing Techniques 识别训练器</h1>
+          <h1>Writing Techniques</h1>
           <p class="hero-text">
-            用资料里的核心手法做成一个可反复练习的静态页面。你可以先背判断线索，再刷题，最后用 effect
-            sentence stems 练出答题表达。
+            系统整理 GCSE English Language 常见 techniques 和 writing effects，并配套考试风格练习。
           </p>
-          <div class="hero-actions">
-            <a class="button primary" href="#quiz">开始刷题</a>
-            <button class="button secondary" id="shuffle-all" type="button">
-              生成一套新题
-            </button>
-          </div>
         </div>
         <div class="hero-panel">
           <div class="panel-badge">Exam Focus</div>
           <ul class="quick-rules">
-            <li>先找语言特征，再说 effect</li>
-            <li>看到重复、夸张、提问、代词要警觉</li>
-            <li>effect 要写读者感受和作者目的</li>
+            <li>先认 technique，再说 reader effect 和 writer purpose</li>
+            <li>effect 句要写出“强调什么”与“让读者怎么想/怎么感受”</li>
+            <li>练习题材贴近 speech、article、leaflet、letter、blog 等 GCSE 文体</li>
           </ul>
         </div>
       </header>
 
       <main>
-        <section class="section" id="techniques">
-          <div class="section-heading">
-            <p class="section-kicker">Step 1</p>
-            <h2>Technique Cheat Sheet</h2>
-            <p>
-              每张卡都按“怎么认 + 有什么效果 + 怎么写分析句”来整理，方便你把识别和答题连起来。
-            </p>
-          </div>
-          <div class="card-grid" id="technique-grid"></div>
-        </section>
-
-        <section class="section memory-section">
-          <div class="section-heading">
-            <p class="section-kicker">Step 2</p>
-            <h2>快速记忆法</h2>
-            <p>不是死背定义，而是把“特征”和“作用”绑在一起记。</p>
-          </div>
-          <div class="memory-grid">
-            <article class="memory-card">
-              <h3>判断口诀</h3>
-              <p>
-                夸张看 <strong>不真实放大</strong>，重复看 <strong>词句回环</strong>，情绪词看
-                <strong>强烈态度</strong>，事实数据看 <strong>证据支撑</strong>，人称代词看
-                <strong>拉近距离</strong>，反问看 <strong>问而不答</strong>。
-              </p>
-            </article>
-            <article class="memory-card">
-              <h3>Effect 模板</h3>
-              <p>
-                The writer uses <span class="inline-chip">technique</span> to
-                <span class="inline-chip">highlight / emphasise / provoke</span>
-                ..., making the reader feel
-                <span class="inline-chip">concerned / involved / shocked</span>.
-              </p>
-            </article>
-            <article class="memory-card">
-              <h3>答题顺序</h3>
-              <p>
-                1. 点出 technique。 2. 引用关键词。 3. 说明它如何影响读者。 4. 连接作者想传达的观点。
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <section class="section" id="quiz">
-          <div class="section-heading">
-            <p class="section-kicker">Step 3</p>
-            <h2>Interactive Quiz</h2>
-            <p>每次都会从题库里随机抽题，适合反复练习判断 technique 和分析 effect。</p>
-          </div>
-
-          <div class="score-strip">
-            <div>
-              <span class="score-label">当前得分</span>
-              <strong id="score-value">0 / 0</strong>
-            </div>
-            <button class="button secondary" id="reset-score" type="button">
-              清空本轮记录
+        <section class="section tabs-section">
+          <div class="tab-bar" role="tablist" aria-label="GCSE trainer tabs">
+            <button
+              class="tab-button active"
+              id="study-tab"
+              type="button"
+              role="tab"
+              aria-selected="true"
+              aria-controls="study-panel"
+              data-tab="study"
+            >
+              学习 Tab
+            </button>
+            <button
+              class="tab-button"
+              id="practice-tab"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="practice-panel"
+              data-tab="practice"
+            >
+              练习 Tab
             </button>
           </div>
+        </section>
 
-          <div class="quiz-stack">
-            <article class="quiz-card">
-              <div class="quiz-head">
-                <p class="quiz-type">Question Type A</p>
-                <h3>Identify the Technique</h3>
-              </div>
-              <p class="question-text" id="identify-prompt"></p>
-              <div class="options" id="identify-options"></div>
-              <div class="quiz-actions">
-                <button class="button primary" id="identify-check" type="button">
-                  提交答案
-                </button>
-                <button class="button ghost" id="identify-next" type="button">
-                  换一题
-                </button>
-              </div>
-              <div class="feedback" id="identify-feedback"></div>
-            </article>
+        <section class="tab-panel active" id="study-panel" role="tabpanel" aria-labelledby="study-tab">
+          <section class="section">
+            <div class="section-heading">
+              <p class="section-kicker">Study 1</p>
+              <h2>Common GCSE Techniques</h2>
+              <p>
+                这些是 GCSE English Language 里最常见、最值得优先掌握的 writing techniques。
+                每张卡都包含识别方式、常见 effect 和可直接套用的分析句型。
+              </p>
+            </div>
+            <div class="card-grid" id="technique-grid"></div>
+          </section>
 
-            <article class="quiz-card">
-              <div class="quiz-head">
-                <p class="quiz-type">Question Type B</p>
-                <h3>Pick the Best Effect</h3>
-              </div>
-              <p class="question-text" id="effect-prompt"></p>
-              <div class="options" id="effect-options"></div>
-              <div class="quiz-actions">
-                <button class="button primary" id="effect-check" type="button">
-                  提交答案
-                </button>
-                <button class="button ghost" id="effect-next" type="button">
-                  换一题
-                </button>
-              </div>
-              <div class="feedback" id="effect-feedback"></div>
-            </article>
+          <section class="section">
+            <div class="section-heading">
+              <p class="section-kicker">Study 2</p>
+              <h2>Effect 速记框架</h2>
+              <p>答题时不要只写“吸引读者”，而要更具体地写作者如何操控读者反应。</p>
+            </div>
+            <div class="memory-grid">
+              <article class="memory-card">
+                <h3>识别顺序</h3>
+                <p>
+                  先看词语或句式特征，再判断 technique，最后补上 effect 和 writer purpose。
+                </p>
+              </article>
+              <article class="memory-card">
+                <h3>Effect 句型</h3>
+                <p>
+                  The writer uses <span class="inline-chip">technique</span> to
+                  <span class="inline-chip">emphasise / provoke / engage</span>
+                  ..., making the reader feel
+                  <span class="inline-chip">concerned / involved / shocked</span>.
+                </p>
+              </article>
+              <article class="memory-card">
+                <h3>高分关键</h3>
+                <p>
+                  effect 要写具体结果，比如 creates urgency、builds sympathy、adds authority、
+                  makes the reader question their own behaviour。
+                </p>
+              </article>
+            </div>
+          </section>
 
-            <article class="quiz-card passage-card">
+          <section class="section">
+            <div class="section-heading">
+              <p class="section-kicker">Study 3</p>
+              <h2>Technique And Effect Map</h2>
+              <p>这个区域帮你把 technique、常见效果和典型 writer purpose 绑定起来记忆。</p>
+            </div>
+            <div class="effect-table" id="effect-table"></div>
+          </section>
+        </section>
+
+        <section
+          class="tab-panel"
+          id="practice-panel"
+          role="tabpanel"
+          aria-labelledby="practice-tab"
+          hidden
+        >
+          <section class="section">
+            <div class="section-heading">
+              <p class="section-kicker">Practice</p>
+              <h2>Exam-Style Practice</h2>
+              <p>
+                练习区分为两类：一种是选择题，用来训练快速识别；另一种是 writing effect
+                输入题，用来训练你自己写出分析句。
+              </p>
+            </div>
+
+            <div class="score-strip">
+              <div>
+                <span class="score-label">当前总得分</span>
+                <strong id="score-value">0 / 0</strong>
+              </div>
+              <button class="button secondary" id="reset-score" type="button">
+                清空本轮记录
+              </button>
+            </div>
+
+            <div class="practice-grid">
+              <article class="quiz-card">
+                <div class="quiz-head">
+                  <p class="quiz-type">Question Type A</p>
+                  <h3>Identify the Technique</h3>
+                </div>
+                <p class="question-source" id="identify-source"></p>
+                <p class="question-text" id="identify-prompt"></p>
+                <div class="options" id="identify-options"></div>
+                <div class="quiz-actions">
+                  <button class="button primary" id="identify-check" type="button">
+                    提交答案
+                  </button>
+                  <button class="button ghost" id="identify-next" type="button">
+                    换一题
+                  </button>
+                </div>
+                <div class="feedback" id="identify-feedback"></div>
+              </article>
+
+              <article class="quiz-card">
+                <div class="quiz-head">
+                  <p class="quiz-type">Question Type B</p>
+                  <h3>Choose the Best Effect</h3>
+                </div>
+                <p class="question-source" id="effect-source"></p>
+                <p class="question-text" id="effect-prompt"></p>
+                <div class="options" id="effect-options"></div>
+                <div class="quiz-actions">
+                  <button class="button primary" id="effect-check" type="button">
+                    提交答案
+                  </button>
+                  <button class="button ghost" id="effect-next" type="button">
+                    换一题
+                  </button>
+                </div>
+                <div class="feedback" id="effect-feedback"></div>
+              </article>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="section-heading">
+              <p class="section-kicker">Written Practice</p>
+              <h2>Writing Effect Drill</h2>
+              <p>
+                先读一段更像 GCSE 考试里的文段，再自己写 effect 分析。难度越高，给你的提示越少。
+              </p>
+            </div>
+
+            <div class="difficulty-bar" role="tablist" aria-label="written practice difficulty">
+              <button class="difficulty-button active" type="button" data-difficulty="easy">
+                Easy
+              </button>
+              <button class="difficulty-button" type="button" data-difficulty="medium">
+                Medium
+              </button>
+              <button class="difficulty-button" type="button" data-difficulty="hard">
+                Hard
+              </button>
+            </div>
+
+            <article class="quiz-card long-card">
               <div class="quiz-head">
                 <p class="quiz-type">Question Type C</p>
-                <h3>Mixed Passage Drill</h3>
+                <h3>Write About the Effect</h3>
               </div>
-              <p class="passage-label">阅读下面短文，选择最明显的 technique。</p>
-              <blockquote class="passage-text" id="passage-prompt"></blockquote>
-              <div class="options multi-options" id="passage-options"></div>
+
+              <div class="passage-meta">
+                <span class="tag" id="written-genre-tag">Speech</span>
+                <span class="tag secondary-tag" id="written-topic-tag">Environment</span>
+              </div>
+              <p class="question-source" id="written-source"></p>
+
+              <blockquote class="passage-text" id="written-passage"></blockquote>
+
+              <div class="written-question-block">
+                <p class="written-question" id="written-question"></p>
+                <p class="written-helper" id="written-helper"></p>
+              </div>
+
+              <div id="written-answer-zone"></div>
+
               <div class="quiz-actions">
-                <button class="button primary" id="passage-check" type="button">
+                <button class="button primary" id="written-check" type="button">
                   检查答案
                 </button>
-                <button class="button ghost" id="passage-next" type="button">
+                <button class="button ghost" id="written-next" type="button">
                   换一题
                 </button>
               </div>
-              <div class="feedback" id="passage-feedback"></div>
+
+              <div class="feedback" id="written-feedback"></div>
+              <div class="model-answer" id="model-answer"></div>
             </article>
-          </div>
+          </section>
         </section>
       </main>
     </div>
