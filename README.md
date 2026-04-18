@@ -12,12 +12,31 @@ A static practice site for revising GCSE English Language writing techniques.
 
 ## Included Techniques
 
-- Hyperbole
+This trainer now covers a wider GCSE revision set, including:
+
+- Rhetorical questions
+- Personal pronouns
 - Repetition
+- Rule of three
 - Emotive language
 - Facts and statistics
-- Personal pronouns
-- Rhetorical questions
+- Imperatives
+- Hyperbole
+- Anecdote
+- Contrast and juxtaposition
+- Metaphor / simile and extended metaphor
+- Sensory imagery
+- Pathetic fallacy
+- Personification
+- Oxymoron
+- Symbolism
+- Semantic field
+- Irony
+- Alliteration, assonance, sibilance and plosives
+- Euphemism
+- Onomatopoeia
+- Zoomorphism
+- Opinion
 
 ## Project Structure
 
